@@ -4,16 +4,13 @@ import numpy as np
 df = pd.read_csv('2017_Yellow_Taxi_Trip_Data.csv')
 print("done")
 
-#Checks the top rows, data types on list and statistics
+#Checks the top rows, data types on the list, and statistics
 
 df.head(10)
 
 df.info()
 
 df.describe()
-
-
-
 # Sort the data by trip distance from maximum to minimum value
 df_sort = df.sort_values(by=['trip_distance'],ascending=False)
 df_sort.head(10)
@@ -29,11 +26,11 @@ total_amount_sorted.head(20)
 total_amount_sorted.tail(20)
 
 
-# How many of each payment type are represented in the data?
+# How many of each payment type is represented in the data?
 df['payment_type'].value_counts()
 
 
-# What is the average tip for trips paid for with credit card?
+# What is the average tip for trips paid for with a credit card?
 avg_cc_tip = df[df['payment_type']==1]['tip_amount'].mean()
 print('Avg. cc tip:', avg_cc_tip)
 
